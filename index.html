@@ -102,18 +102,25 @@ fetch(API + "/checks")
 .catch(err => console.log("Backend not available", err));
 
 checks.forEach(box => {
+
     box.addEventListener("change", () => {
-        fetch(API + "/checks", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json"
-            },
-            body: JSON.stringify({
-                id: box.dataset.id,
-                checked: box.checked
-            })
+
+        const data = JSON.stringify({
+            id: box.dataset.id,
+            checked: box.checked
         });
+
+
+        navigator.sendBeacon(
+            API + "/checks",
+            new Blob(
+                [data],
+                {type:"application/json"}
+            )
+        );
+
     });
+
 });
 </script>
 
