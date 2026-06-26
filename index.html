@@ -9,10 +9,72 @@ td { border: 1px solid #ccc; padding: 8px; vertical-align: middle; font-size: 10
 tr:nth-child(even) { background-color: #f9f9f9; }
 .checkbox { text-align: center; font-size: 16pt; }
 </style>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+*{box-sizing:border-box}
+body{
+font-family:'Segoe UI',Arial,sans-serif;
+margin:0;
+padding:12px;
+background:#f4f7fb;
+}
+h2{text-align:center;font-size:22px}
+.table-wrapper{
+overflow-x:auto;
+background:white;
+border-radius:14px;
+box-shadow:0 4px 15px rgba(0,0,0,.1);
+}
+table{
+border-collapse:collapse;
+width:100%;
+min-width:650px;
+}
+th{
+background:#2c3e50;
+color:white;
+padding:12px;
+}
+td{
+border-bottom:1px solid #ddd;
+padding:12px;
+font-size:15px;
+}
+tr:nth-child(even){background:#f8fafc}
+.checkbox{text-align:center}
+.reading-check{
+width:26px;
+height:26px;
+}
+@media(max-width:520px){
+body{padding:8px}
+h2{font-size:18px}
+table,tbody,tr,td,th{display:block}
+table{min-width:0}
+thead{display:none}
+tr{
+background:white!important;
+margin-bottom:12px;
+padding:12px;
+border-radius:14px;
+box-shadow:0 3px 10px rgba(0,0,0,.08);
+}
+td{
+border:0;
+padding:5px;
+}
+td:first-child{font-weight:bold}
+.reading-check{
+width:32px;
+height:32px;
+}
+}
+</style>
 </head>
 <body>
 <h2>📖 План чтения писем апостолов (Перевод нового мира)</h2>
-<table>
+<div class='table-wrapper'><table>
 <tr><th>День</th><th>Письмо (главы)</th><th>Стихи для чтения</th><th>☐ Прочитано</th></tr>
 <tr><td>День 1</td><td>Иакова (гл. 1)</td><td>1:1–27</td><td class="checkbox"><input type="checkbox" class="reading-check" data-id="1" /></td></tr>
 <tr><td>День 2</td><td>Иакова (гл. 2–3)</td><td>2:1–26, 3:1–12</td><td class="checkbox"><input type="checkbox" class="reading-check" data-id="2" /></td></tr>
@@ -82,7 +144,7 @@ tr:nth-child(even) { background-color: #f9f9f9; }
 <tr><td>День 66</td><td>2-е Иоанна (гл. 1)</td><td>1:1–13</td><td class="checkbox"><input type="checkbox" class="reading-check" data-id="66" /></td></tr>
 <tr><td>День 67</td><td>3-е Иоанна (гл. 1)</td><td>1:1–15</td><td class="checkbox"><input type="checkbox" class="reading-check" data-id="67" /></td></tr>
 <tr><td>День 68</td><td>Иуды (гл. 1)</td><td>1:1–25</td><td class="checkbox"><input type="checkbox" class="reading-check" data-id="68" /></td></tr>
-</table>
+</table></div>
 
 <script>
 const API = "https://bible-nnqq.onrender.com";
